@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore Projects - RESEARCH CONNECT</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/projects.css">
+</head>
+<body class="explorer-body">
+
+  <nav class="navbar explorer-nav">
+    <div class="nav-logo">RESEARCH<span> CONNECT</span></div>
+    <div class="nav-right">
+      <span class="welcome-pill" id="welcomeText">Welcome</span>
+      <button class="nav-btn ghost" id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="search-wrap">
+    <input type="text" id="domainSearch" placeholder="Enter a domain... e.g. E-commerce, Healthcare, Education, Food Delivery">
+    <button id="searchBtn">Search</button>
+  </div>
+  <div class="domain-chips" id="domainChips"></div>
+
+  <main class="explorer-main">
+
+    <section class="results-panel">
+      <h2 id="resultsTitle">All Projects</h2>
+      <div class="project-list" id="projectList"></div>
+    </section>
+
+    <aside class="chat-panel">
+      <div class="live-preview" id="livePreview">
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="browser-url" id="previewUrl">select-a-project.demo</span>
+          </div>
+          <div class="browser-content" id="previewContent">
+            <div class="preview-placeholder"><div class="pp-icon">🚀</div>Click a project, then launch its <b>live running demo</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="chat-panel-header">
+        <span>💬 Project Assistant</span>
+      </div>
+      <div class="chat-box" id="chatBox">
+        <div class="bubble system">Select a project on the left to learn more, or ask me anything about it.</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Ask about the selected project...">
+        <button id="sendBtn">Send</button>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- LIVE DEMO MODAL -->
+  <div class="demo-modal" id="demoModal">
+    <div class="demo-modal-box" id="demoModalBox">
+      <div class="demo-modal-header">
+        <div class="demo-modal-titlewrap">
+          <span class="live-status"><span class="live-dot"></span>LIVE</span>
+          <span id="demoModalTitle">Project Demo</span>
+        </div>
+        <div class="demo-modal-btns"><button class="demo-modal-close" id="demoFullBtn" title="Fullscreen">⛶</button><button class="demo-modal-close" id="demoModalClose" title="Close">✕</button></div>
+      </div>
+      <div class="demo-stage">
+      <iframe id="demoIframe" class="demo-iframe" title="Live Project Demo" sandbox="allow-scripts"></iframe>
+      <div class="demo-modal-bootup" id="demoBootup">
+        <div class="boot-spinner"></div>
+        <p id="bootText">Booting up project...</p>
+        <div class="boot-bar"><div class="boot-bar-fill" id="bootBarFill"></div></div>
+        <div class="boot-log" id="bootLog"></div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/projectData.js"></script>
+  <script src="js/demos.js"></script>
+  <script src="js/projects.js"></script>
+</body>
+</html>
